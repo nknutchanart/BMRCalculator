@@ -1,0 +1,69 @@
+<head>
+    
+</head>
+<body style="padding-top:100px; padding-left: 100px; background-color: rgb(102, 111, 233);">
+
+        <h1 style="color: rgb(253, 253, 253); font-size: 25px;font-weight: bold;">โปรแกรมคำนวณการเผาผลาญพลังงาน</h1>
+        <h2 style="color: rgb(255, 255, 255); font-size: 20px; font-weight: normal;"> ร่างกายของเราต้องการวันละกี่แคลอรี่ </h2>
+
+    
+        <div style="font-size: 16px; font-weight: normal; color: #ffffff;"> 
+            <p>ส่วนสูง (เซนติเมตร) : 
+                <input style="font-size: 16px; padding: 10px; border: 1px solid gray; border-radius: 5px;   width: 150px; height: 25px;" id="height" type="number" required><br>
+            
+            <p>น้ำหนัก (กิโลกรัม) 
+                <input style="font-size: 16px; padding: 10px; border: 1px solid gray; border-radius: 5px;   width: 150px; height: 25px;" type="number" id="weight" name="height"><br>
+            
+            <p>อายุ (ปี) : 
+                <input style="font-size: 16px; padding: 10px; border: 1px solid gray; border-radius: 5px;   width: 150px; height: 25px;" type="number" id="age" name="age" ><br>
+            
+            <p>เพศ:
+                <select style="font-size: 16px; padding: 0px; border: 1px solid gray; border-radius: 10px;  width: 90px; height: 35px;" id="gender" name="gender">
+                    <option value="none">ระบุเพศ</option>
+                    <option value="male">ผู้ชาย</option>
+                    <option value="female">ผู้หญิง</option>
+                </select><br>
+            </p>
+            <p>ออกกำลังกาย:
+                <select style="font-size: 16px; padding: 0px; border: 1px solid gray; border-radius: 10px;  width: 310px; height: 35px;" id="activity" name="activity">
+                    <option value="0">โปรดระบุความถี่ในการออกกำลังกาย</option>
+                    <option value="1.2">ไม่ออกกำลังกาย/ไม่ออกเลย</option>
+                    <option value="1.375">ออกกำลังกายน้อยมาก 1-3 วัน/สัปดาห์</option>
+                    <option value="1.55">ออกกำลังกายปานกลาง 3-5 วัน/สัปดาห์ </option>
+                    <option value="1.725">ออกกำลังกายหนัก 6-7 วัน/สัปดาห์</option>
+                    <option value="1.9">ออกกำลังกายหนักมาก</option>
+                </select><br>
+            </p>
+        </div>
+        
+        <button style="font-size: 18px;font-weight: bold; background-color: rgb(255, 255, 255);     border-radius: 12px; width: 300px; height: 35px;" onclick="toCalorie(toBmr(
+            document.getElementById('height').value,
+            document.getElementById('weight').value,
+            document.getElementById('age').value,
+            document.getElementById('gender').value,
+        ),document.getElementById('activity').value)">คำนวณ</button>
+  
+
+    <br>
+    <hr>
+
+    <div style="color: #ffffff; font-size: 18px; font-weight: bold; background-color: rgb(54, 148, 255); border-radius: 12px; width: 600px; height: 120px; padding-top:20px;padding-left: 20px; padding-right: 20px;">
+        <span> BMR (Basal Metabolic Rate) - พลังงานที่จำเป็นพื้นฐานในการมีชีวิต: </span>
+        <div style="font-size: 32px; font-weight: bold; color: rgb(72, 5, 255); padding-top:20px;"  id="bmrResult"></div>
+    </div><br>
+
+    <div style="color: #ffffff; font-size: 18px; font-weight: bold; background-color: rgb(54, 148, 255); border-radius: 12px; width: 600px; height: 120px; padding-top:20px;padding-left: 20px; padding-right: 20px;">
+        <span>TDEE (Total Daily Energy Expenditure) - พลังงานที่คุณใช้ในแต่ละวัน: </span>
+        <div style="font-size: 32px; font-weight: bold; color: rgb(72, 5, 255); padding-top:20px;" id="CalorieResult"></div>
+    </div>
+
+
+
+    <script src="Project-BMRCalculator.js">
+    </script>
+
+       
+</body>
+
+
+
