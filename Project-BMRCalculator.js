@@ -2,6 +2,7 @@ function toBmr(height, weight, age, gender)
 {
 
     let M = 66; 
+    let MF = 66; 
     let F = 665; 
     let bmr;
     if (gender === "male") {
